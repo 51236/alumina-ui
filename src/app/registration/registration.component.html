@@ -1,0 +1,584 @@
+<div class="regristartion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <h2 class="heading">INDUSTRIAL REGISTRATION</h2>
+            <div class="">
+                <button class="btn btn-primary martop" (click)="goback()">GO TO HOME</button>
+                </div>
+
+
+                
+            <div class="mainbox">
+                <h4 class="heading1">Generals Details</h4>
+                <form [formGroup]="add_industry" (ngSubmit)=Insert()>            
+ <div class="row">
+    
+ 
+
+</div>
+
+                    <div class="row">
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">Industry Name</label>
+                            <input class="form-control texbsize" class="form-control" [(ngModel)]="ind_gen_name" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_name.errors }" type="text" formControlName="ind_gen_name"   placeholder="Enter Name" >
+                              <div *ngIf="submitted && f.ind_gen_name.errors" class="invalid-feedback">
+                             <div *ngIf="f.ind_gen_name.errors.required">*Name required</div>
+                         </div>
+                        
+                     </div>
+                     
+                       
+                    <div class="form-group col-md-3 smallpad">
+                         <label class="name1">Industry Category</label>
+                            <select class="form-control texbsize" [(ngModel)]="ind_gen_ddlcategory"  formControlName="ind_gen_ddlcategory" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_ddlcategory.errors }">
+                                <option>Select</option>
+                                <option value="1">Test1</option>
+                                <option value="2">Test2</option>
+                            </select>
+                            <div *ngIf="submitted && f.ind_gen_ddlcategory.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_ddlcategory.errors.required">Select Any One</div>
+                      </div>
+                   </div>
+
+                  <div class="form-group col-md-3 smallpad">
+                        <label class="name1">Vendor <span style="color:red;">*</span></label>
+                            <input class="form-control texbsize" [(ngModel)]="ind_gen_vender"   class="form-control"  [ngClass]="{ 'is-invalid':submitted && f.ind_gen_vender.errors }" type="text" placeholder="Enter Vender" formControlName="ind_gen_vender">
+                               <div *ngIf="submitted && f.ind_gen_vender.errors" class="invalid-feedback">                           
+                               <div *ngIf="f.ind_gen_vender.errors.required">*Vendor required
+                               </div>
+                           </div>
+                  </div>
+
+                        
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">Existing Part Id <span style="color:red;">*</span></label>
+                            <input class="form-control texbsize" class="form-control" [(ngModel)]="ind_gen_existing_part_id"    [ngClass]="{ 'is-invallid':submitted && f.ind_gen_existing_part_id.errors }" type="text"  placeholder="Enter Part Id" formControlName="ind_gen_existing_part_id">
+                        <div *ngIf="submitted && f.ind_gen_existing_part_id.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_existing_part_id.errors.required">*Part Id Required
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                  </div>
+
+                    <div class="row">
+                       <div class="form-group col-md-3 smallpad">
+                            <label class="name1">District<span style="color:red;">*</span></label>
+                            <select class="form-control texbsize" [(ngModel)]="ind_gen__district"   formControlName="ind_gen__district" [ngClass]="{'is-invalid':submitted && f.ind_gen__district.errors}">
+                                <option>Select</option>
+                                <option value="1">Kalahandi</option>
+                                <option value="2">Sundargard</option>
+                            </select>
+                             <div *ngIf="submitted && f.ind_gen__district.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen__district.errors.required">*District Required</div>
+                        </div>
+                       </div>
+
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">Regional Office</label>
+                            <input class="form-control texbsize" type="text" [(ngModel)]="ind_reg_ofc"   formControlName="ind_reg_ofc" placeholder="Enter Regional Office" [ngClass]="{'is-invalid':submitted && f.ind_reg_ofc.errors}">
+                        <div *ngIf="submitted && f.ind_reg_ofc.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_reg_ofc.errors.required">*Regional Required</div>
+                        </div>
+                         </div>
+
+
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">No. of CAAQME Structure</label>
+                            <input class="form-control texbsize" type="text" [(ngModel)]="ind_gen_caaqme"   formControlName="ind_gen_caaqme" placeholder="No. of CAAQME Structure" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_caaqme.errors }">
+                         <div *ngIf="submitted && f.ind_gen_caaqme.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_caaqme.errors.required">*CAAQME Required</div>
+                        </div>
+                        </div>
+
+
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">No. of CEMC Structure</label>
+                            <input class="form-control texbsize" type="text" [(ngModel)]="ind_gen_cemc"   formControlName="ind_gen_cemc" placeholder="No. of CEMC Structure"[ngClass]="{ 'is-invalid': submitted && f.ind_gen_cemc.errors }">
+                         <div *ngIf="submitted && f.ind_gen_cemc.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_cemc.errors.required">*CEMC Required</div>
+                        </div>
+                       </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 smallpad">
+                            <label class="name1">No. of CEMES </label>
+                            <input class="form-control texbsize" type="text" [(ngModel)]="ind_gen_no_of_cemes"   formControlName="ind_gen_no_of_cemes" placeholder="No. of CEMES" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_no_of_cemes.errors }">
+                        <div *ngIf="submitted && f.ind_gen_no_of_cemes.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_no_of_cemes.errors.required">*CEMES Required</div>
+                        </div>
+                         </div>
+
+                       <div class="form-group col-md-4 smallpad">
+                            <label class="name1">Primary Contact <span style="color:red;">*</span></label>
+                <div class="row">
+                            <div class="col-md-6">
+                               <div class="fontpassword ">
+                            <input class="form-control texbsize1" type="text" [(ngModel)]="ind_gen_prim_cont_pername"   formControlName="ind_gen_prim_cont_pername" placeholder="Enter Person Name" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_prim_cont_pername.errors }">
+                             <i _ngcontent-hel-c18="" class="fas fa-user fa-fw"></i>                     
+                            <div *ngIf="submitted && f.ind_gen_prim_cont_pername.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_prim_cont_pername.errors.required">*Data is Required</div>
+                        </div>
+                               </div>
+                            </div>
+                            <div class="col-md-6">
+                               <div class="fontpassword ">
+                            <input class="form-control texbsize1" type="text" [(ngModel)]="ind_gen_prim_design"   formControlName="ind_gen_prim_design" placeholder="Enter Designation" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_prim_design.errors }">
+                               <div *ngIf="submitted && f.ind_gen_prim_design.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_prim_design.errors.required">*Data is Required</div>
+                        </div>                  
+                            
+                               </div>
+                            </div>
+                </div>
+
+                            <div class="row martop1">
+                                 <div class="col-md-6">
+                                <div class="fontpassword ">
+                                <input class="form-control texbsize1" [(ngModel)]="ind_gen_prim_phone"   type="text" formControlName="ind_gen_prim_phone" placeholder="Enter Phone No" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_prim_phone.errors }" >
+                                 <div *ngIf="submitted && f.ind_gen_prim_phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_prim_phone.errors.required">*Data is Required</div>
+</div>
+                                <i _ngcontent-hel-c18="" class="fas fa-phone-alt fa-fw" style="color:grey;"></i>
+                                </div>
+                                </div>
+                                <div class="col-md-6 nopad">
+                                     <div class="fontpassword ">
+                                <input class="form-control texbsize1" type="text" [(ngModel)]="ind_gen_prim_email"   formControlName="ind_gen_prim_email" placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_prim_email.errors }">
+                                 <div *ngIf="submitted && f.ind_gen_prim_email.errors" class="invalid-feedback">
+                                 <div *ngIf="f.ind_gen_prim_email.errors.required">*Data is Required</div>
+                               </div>
+                                <i _ngcontent-hel-c18="" class="fas fa-envelope fa-fw" style="color:green;"></i>
+                                </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group col-md-5 smallpad">
+                            <label class="name1">Security Contact (Technical Contact Person)</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <div class="fontpassword ">
+                                    <input class="form-control texbsize1" [(ngModel)]="ind_gen_security_cont_person_name"   type="text" formControlName="ind_gen_security_cont_person_name" placeholder="Enter Person Name" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_security_cont_person_name.errors }">
+                                     <div *ngIf="submitted && f.ind_gen_security_cont_person_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_security_cont_person_name.errors.required">*Data is Required</div>
+</div>
+                                    <i _ngcontent-hel-c18="" class="fas fa-user fa-fw"></i>
+                                    </div>
+                                    </div>
+                                   <div class="col-md-6 nopad">
+                                    <input class="form-control texbsize" [(ngModel)]="ind_gen_security_cont_degn"   type="text" formControlName="ind_gen_security_cont_degn" placeholder="Enter Designation" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_security_cont_degn.errors }">
+                                     <div *ngIf="submitted && f.ind_gen_security_cont_degn.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_security_cont_degn.errors.required">*Data is Required</div>
+                                    </div></div>
+                                </div>
+                                <div class="row martop1">
+                                    <div class="col-md-6">
+                                    <div class="fontpassword ">
+                                    <input class="form-control texbsize1" [(ngModel)]="ind_gen_security_cont_phone"   type="text" formControlName="ind_gen_security_cont_phone" placeholder="Enter Phone No" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_security_cont_phone.errors }">
+                                     <div *ngIf="submitted && f.ind_gen_security_cont_phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_security_cont_phone.errors.required">*Data is Required</div>
+</div>
+                                    <i _ngcontent-hel-c18="" class="fas fa-phone-alt fa-fw" style="color:grey;"></i>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 nopad">
+                                         <div class="fontpassword">
+                                    <input class="form-control texbsize1" [(ngModel)]="ind_gen_security_cont_email"   type="text" formControlName="ind_gen_security_cont_email" placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_security_cont_email.errors }">
+                                     <div *ngIf="submitted && f.ind_gen_security_cont_email.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_security_cont_email.errors.required">*Data is Required</div>
+</div>
+                                    <i _ngcontent-hel-c18="" class="fas fa-envelope fa-fw" style="color:green;"></i>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                           <label class="name1">Address <span style="color:red;">*</span></label>
+                           <textarea class="form-control" rows="3" formControlName="ind_gen_address"  [(ngModel)]="ind_gen_address"  placeholder="Address" [ngClass]="{ 'is-invalid': submitted && f.ind_gen_address.errors }"></textarea>
+                            <div *ngIf="submitted && f.ind_gen_address.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_gen_address.errors.required">*Address is Required</div>
+                        </div></div>
+                    </div>
+
+
+                  <h4 class="heading1">Network Connectivity</h4> 
+<div class="row">
+
+
+                   <div class="form-group col-md-6 smallpad" >
+                            <label class="name1">Data Transmission <span style="color:red;">*</span></label>
+                               
+                        <select class="form-control texbsize" [(ngModel)]="ind_network_conn_data_trans" formControlName="ind_network_conn_data_trans" [ngClass]="{'is-invalid':submitted && f.ind_network_conn_data_trans.errors}">
+                                <option >Select</option>
+                                <option value="1">Block Base</option>
+                                <option value="2">Block Base Test</option>
+                            </select>
+
+                        <div *ngIf="submitted && f.ind_network_conn_data_trans.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_conn_data_trans.errors.required">*Network Connectivity Required</div>
+                        </div>
+                        
+                        </div>
+
+                        <div class="form-group col-md-6 smallpad">
+                            <label class="name1">Historical Data Activity<span style="color:red;">*</span></label>
+                           
+                             <select class="form-control texbsize" [(ngModel)]="ind_network_con_historical_data_activity" formControlName="ind_network_con_historical_data_activity" [ngClass]="{'is-invalid':submitted && f.ind_network_con_historical_data_activity.errors}">
+                                <option>Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>                            
+                                </select>
+
+                        <div *ngIf="submitted && f.ind_network_con_historical_data_activity.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_historical_data_activity.errors.required">*Historical Data Activity Id Required</div>
+                           </div>
+                           </div>
+
+
+</div>
+<h4 class="heading1">Process Details</h4> 
+<!-- testttt -->
+
+
+ <div id="content">
+      <div id="contentInside" *ngFor="let container of containers" style="border: 2px solid black;outline: grey solid 10px;margin: auto; padding: 20px; text-align: center;">
+
+
+<div>
+
+<div class="row" >
+     <div class="form-group col-md-2 smallpad" >
+                            <label class="name1">Monitoring Type<span style="color:red;">*</span></label>
+                           
+                             <select class="form-control texbsize"  formControlName="ind_network_con_monitoring_typ" [ngClass]="{'is-invalid':submitted && f.ind_network_con_monitoring_typ.errors}">
+                                <option>Select</option>
+                                <option>Yes</option>
+                                <option>No</option>                            
+                                </select>
+
+                        <div *ngIf="submitted && f.ind_network_con_monitoring_typ.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_monitoring_typ.errors.required">*Monitoring Type Required</div>
+                           </div>
+                           </div>
+
+
+ <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Station Name<span style="color:red;">*</span></label>
+                           
+                    <input type="text"  class="form-control texbsize" placeholder="Station Name" formControlName="ind_network_con_station_name" [ngClass]="{'is-invalid':submitted && f.ind_network_con_station_name.errors}">     
+
+                        <div *ngIf="submitted && f.ind_network_con_station_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_station_name.errors.required">*Station Name Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Process Attached<span style="color:red;">*</span></label>
+                           
+                        <input type="text" class="form-control texbsize" placeholder="Process Attached" formControlName="ind_network_con_process_attached" [ngClass]="{'is-invalid':submitted && f.ind_network_con_process_attached.errors}">     
+
+
+                        <div *ngIf="submitted && f.ind_network_con_process_attached.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_process_attached.errors.required">*Process Attached Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Vendor<span style="color:red;">*</span></label>
+                           
+                             <input type="text" class="form-control texbsize" placeholder="Vendor" formControlName="ind_network_con_vendor" [ngClass]="{'is-invalid':submitted && f.ind_network_con_vendor.errors}">     
+
+
+                        <div *ngIf="submitted && f.ind_network_con_vendor.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_vendor.errors.required">*vendor Required</div>
+                           </div>
+                           </div>
+
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Analyser Make<span style="color:red;">*</span></label>
+                           
+                             <input type="text" class="form-control texbsize" placeholder="Analyser Make" formControlName="ind_network_con_analyser_make" [ngClass]="{'is-invalid':submitted && f.ind_network_con_analyser_make.errors}">     
+
+
+                        <div *ngIf="submitted && f.ind_network_con_analyser_make.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_analyser_make.errors.required">*Analyser Make Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Analyser Model<span style="color:red;">*</span></label>
+                           
+                            <input type="text" class="form-control texbsize" placeholder="Analyser Model" formControlName="ind_network_con_analyser_model" [ngClass]="{'is-invalid':submitted && f.ind_network_con_analyser_model.errors}">     
+
+
+                        <div *ngIf="submitted && f.ind_network_con_analyser_model.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_analyser_model.errors.required">*Analyzer Model Required</div>
+                           </div>
+                           </div>
+
+
+                           
+                           
+
+</div>
+
+
+
+<div class="row">
+
+       <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Analyser Serial Number<span style="color:red;">*</span></label>
+                           <input type="text" class="form-control texbsize" placeholder="Analyser Serial Number" formControlName="ind_network_con_analyser_serial_number" [ngClass]="{'is-invalid':submitted && f.ind_network_con_analyser_serial_number.errors}">     
+
+                             
+
+                        <div *ngIf="submitted && f.ind_network_con_analyser_serial_number.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_analyser_serial_number.errors.required">*Analyser Serial Number Required</div>
+                           </div>
+                           </div>
+
+
+ <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Device IMEI Number<span style="color:red;">*</span></label>
+                           
+                          <input type="text" class="form-control texbsize" placeholder="Device IMEI Number" formControlName="ind_network_con_device_imei_number" [ngClass]="{'is-invalid':submitted && f.ind_network_con_device_imei_number.errors}">     
+   
+
+                        <div *ngIf="submitted && f.ind_network_con_device_imei_number.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_device_imei_number.errors.required">*Device IMEI Number Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Mac Id<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Mac Id" formControlName="ind_network_con_mac_id" [ngClass]="{'is-invalid':submitted && f.ind_network_con_mac_id.errors}">     
+   
+                            
+
+                        <div *ngIf="submitted && f.ind_network_con_mac_id.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_mac_id.errors.required">*MAC Id Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Measurment Range<span style="color:red;">*</span></label>
+                          <div>
+                          <div>
+                           <input type="text" class="form-control" placeholder="min"  formControlName="ind_network_con_measurement_range_min" [ngClass]="{'is-invalid':submitted && f.ind_network_con_measurement_range_min.errors}">     
+                          <div *ngIf="submitted && f.ind_network_con_measurement_range_min.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_measurement_range_min.errors.required">*Measurment MIN Range Required</div>
+                           </div>
+                           </div>
+                           </div>
+                          <input type="text" class="form-control" placeholder="max" formControlName="ind_network_con_measurement_range_max" [ngClass]="{'is-invalid':submitted && f.ind_network_con_measurement_range_max.errors}">     
+                                
+                        <div *ngIf="submitted && f.ind_network_con_measurement_range_max.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_measurement_range_max.errors.required">*Measurment Max Range Required</div>
+                           </div>
+                           </div>
+
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Parameter<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Parameter" formControlName="ind_network_con_parameter" [ngClass]="{'is-invalid':submitted && f.ind_network_con_parameter.errors}">     
+   
+                             
+                        <div *ngIf="submitted && f.ind_network_con_parameter.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_parameter.errors.required">*Parameter Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Unit<span style="color:red;">*</span></label>
+                           
+                             <select class="form-control texbsize" formControlName="ind_network_con_unit" [ngClass]="{'is-invalid':submitted && f.ind_network_con_unit.errors}">
+                                <option>Select</option>
+                                <option>Yes</option>
+                                <option>No</option>                            
+                                </select>
+
+                        <div *ngIf="submitted && f.ind_network_con_unit.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_unit.errors.required">*Unit Required</div>
+                           </div>
+                           </div>
+
+
+                           
+                           
+
+</div>
+<div class="row">
+
+       <div class="form-group col-md-2 smallpad" >
+                            <label class="name1">Certification<span style="color:red;">*</span></label>
+                           
+                             <select class="form-control texbsize" formControlName="ind_network_con_certification" [ngClass]="{'is-invalid':submitted && f.ind_network_con_certification.errors}">
+                                <option>Select</option>
+                                <option>Yes</option>
+                                <option>No</option>                            
+                                </select>
+
+                        <div *ngIf="submitted && f.ind_network_con_certification.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_certification.errors.required">*certification Required</div>
+                           </div>
+                           </div>
+
+
+                         <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Longitude<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Longitude" formControlName="ind_network_con_longitude" [ngClass]="{'is-invalid':submitted && f.ind_network_con_longitude.errors}">     
+   
+                    
+                            
+
+                        <div *ngIf="submitted && f.ind_network_con_longitude.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_longitude.errors.required">*Longitude Required</div>
+                           </div>
+                           </div>
+
+                           <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Latitude<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Latitude" formControlName="ind_network_con_latitude" [ngClass]="{'is-invalid':submitted && f.ind_network_con_latitude.errors}">     
+   
+                    
+                            
+
+                        <div *ngIf="submitted && f.ind_network_con_latitude.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_latitude.errors.required">*Latitude Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Measurment Principle<span style="color:red;">*</span></label>
+                           <input type="text" class="form-control texbsize" placeholder="Measurment Principle" formControlName="ind_network_con_measurement_principle" [ngClass]="{'is-invalid':submitted && f.ind_network_con_measurement_principle.errors}">     
+   
+                             
+                        <div *ngIf="submitted && f.ind_network_con_measurement_principle.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_measurement_principle.errors.required">*Measurement Principle Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad" >
+                            <label class="name1">Stack Height<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Stack Height" formControlName="ind_network_con_stack_height" [ngClass]="{'is-invalid':submitted && f.ind_network_con_stack_height.errors}">     
+   
+                            
+                        <div *ngIf="submitted && f.ind_network_con_stack_height.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_stack_height.errors.required">*Stack Height Required</div>
+                           </div>
+                           </div>
+
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Stack Diameter<span style="color:red;">*</span></label>
+                           <input type="text" class="form-control texbsize" placeholder="Stack Diameter" formControlName="ind_network_con_stack_diameter" [ngClass]="{'is-invalid':submitted && f.ind_network_con_stack_diameter.errors}">     
+   
+                            
+
+                        <div *ngIf="submitted && f.ind_network_con_stack_diameter.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_stack_diameter.errors.required">*Stack Diameter Required</div>
+                           </div>
+                           </div>
+
+                           
+
+
+                           
+                           
+
+</div>
+<div class="row">
+
+       <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Stack Velocity<span style="color:red;">*</span></label>
+                           
+                       <input type="text" class="form-control texbsize" placeholder="Stack Velocity" formControlName="ind_network_con_stack_velocity" [ngClass]="{'is-invalid':submitted && f.ind_network_con_stack_velocity.errors}">     
+         
+
+                        <div *ngIf="submitted && f.ind_network_con_stack_velocity.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_stack_velocity.errors.required">*Stack Velocity Required</div>
+                           </div>
+                           </div>
+
+
+ <div class="form-group col-md-3 smallpad">
+                            <label class="name1">Flue Gas Discharge Rate M3/Hr<span style="color:red;">*</span></label>
+                           <input type="text" class="form-control texbsize" placeholder="Flue Gas Discharge Rate M3/Hr" formControlName="ind_network_con_flue_gas_discharge_rate_m3_hr" [ngClass]="{'is-invalid':submitted && f.ind_network_con_flue_gas_discharge_rate_m3_hr.errors}">     
+           
+                           
+
+                        <div *ngIf="submitted && f.ind_network_con_flue_gas_discharge_rate_m3_hr.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_network_con_flue_gas_discharge_rate_m3_hr.errors.required">*Flue Gas Discharge Rate M3/Hr Required</div>
+                           </div>
+                           </div>
+
+                            <div class="form-group col-md-2 smallpad">
+                            <label class="name1">Remark<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control texbsize" placeholder="Remark" formControlName="ind_network_con_remark" [ngClass]="{'is-invalid':submitted && f.ind_network_con_remark.errors}">     
+   
+                            
+
+                        <div *ngIf="submitted && f.ind_remark.errors" class="invalid-feedback">
+                        <div *ngIf="f.ind_remark.errors.required">*Remark Required</div>
+                           </div>
+                           </div>                  
+
+
+                            
+
+                           
+                           
+
+</div>
+
+</div>
+
+
+
+
+     
+    </div>
+
+</div>
+
+
+
+
+
+ <div class="row">
+
+
+ 
+                        <div class="form-group col-md-3">
+                            <button type="submit" class="btn btn-success" (click)="add();">Add Process</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                    <div class="form-group col-md-3">
+                           
+                        </div>
+                        <div class="form-group col-md-3">
+                           
+                        </div>
+                        <div class="form-group col-md-6">
+                            <button type="submit" class="btn btn-success">SUBMIT</button>
+                       
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

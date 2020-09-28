@@ -1,0 +1,62 @@
+h2.heading{font-size: 25px;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #333;
+    padding: 10px 50px;
+    margin: 0 auto;
+    font-weight: 600;
+    margin-top: 40px;
+}
+    h4.heading1{
+        color: #fff;
+border-bottom: 7px solid #5B5959;
+padding: 10px 25px;
+font-size: 18px;
+text-transform: uppercase;
+font-weight: 600;
+margin-bottom: 50px;
+background: #007BFF;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+    }
+    .mainbox{
+        width:100%;
+        margin-top:15px;
+        padding: 25px;
+border: 2px solid #ccc;
+    }
+    .form-control.texbsize{
+        padding: 7px 8px;
+        font-size:12px;
+    }
+    .form-control.texbsize1{
+        padding: 7px 5px 7px 25px;
+        font-size:12px;
+    }
+    label.name1{
+        font-size: 14px;
+        color: #666
+    }
+    .btn.btn-primary.martop{
+        margin-top:25px;
+    }
+    .martop1{margin-top:8px;}
+    .smallpad{    
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .nopad{padding-left:0;}
+    select.form-control:not([size]):not([multiple]){
+        height: calc(2.10rem + 0px);
+    }
+    .fontpassword { 
+        position: relative; 
+    } 
+      
+    .fontpassword i{ 
+        position: absolute;
+        left: 5px;
+        top: 11px;
+        color: #0f95ab;
+        font-size: 12px; 
+    } 
